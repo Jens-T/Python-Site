@@ -6,11 +6,12 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
-@app.route("/calculate", methods=["POST"])
-def calculate():
-    number = float(request.form["number"])
-    result = number ** 2
-    return f"Result: {result}"
+while True:
+    @app.route("/calculate", methods=["POST"])
+    def calculate():
+        number = float(request.form["number"])
+        result = number ** 2
+        return f"Result: {result}"
 
 if __name__ == "__main__":
     app.run()
